@@ -437,11 +437,13 @@ strong { font-weight: 600; }
   background: rgba(0, 0, 0, 0.4);
   z-index: 999;
   opacity: 0;
+  pointer-events: none;
   transition: opacity 0.3s ease;
 }
 
 .nav-overlay.is-visible {
   opacity: 1;
+  pointer-events: auto;
 }
 
 
@@ -2252,7 +2254,7 @@ strong { font-weight: 600; }
   }
 
   .nav.is-open        { transform: translateX(0); }
-  .nav-overlay        { display: block; }
+  .nav-overlay        { display: block; pointer-events: none; }
   .nav__list          { flex-direction: column; gap: 6px; }
 
   .nav__link {

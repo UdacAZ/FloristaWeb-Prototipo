@@ -1,0 +1,1078 @@
+/* ============================================================
+   floristanaweb — produto.css
+   Estilos da página de detalhe do produto
+============================================================ */
+
+/* ── Seleção de texto (herda do site principal se não definida) ── */
+::selection {
+  background: var(--pink-300);
+  color: var(--pink-900);
+}
+
+/* ============================================================
+   BREADCRUMB
+============================================================ */
+.breadcrumb-bar {
+  background: var(--gray-100);
+  border-bottom: 1px solid var(--gray-200);
+  padding: 12px 0;
+  margin-top: var(--header-h);
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+  font-size: 0.82rem;
+  color: var(--gray-400);
+}
+
+.breadcrumb a {
+  color: var(--pink-700);
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+.breadcrumb a:hover {
+  color: var(--pink-900);
+  text-decoration: underline;
+}
+
+.breadcrumb__sep {
+  color: var(--gray-400);
+  padding: 0 2px;
+}
+
+.breadcrumb__current {
+  color: var(--gray-600);
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}
+
+
+/* ============================================================
+   SEÇÃO PRINCIPAL DO PRODUTO
+============================================================ */
+.pd-section {
+  padding: 48px 0 64px;
+}
+
+.pd-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: start;
+}
+
+
+/* ============================================================
+   GALERIA
+============================================================ */
+.pd-gallery {
+  position: sticky;
+  top: calc(var(--header-h) + 16px);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pd-gallery__main {
+  position: relative;
+  border-radius: var(--radius-lg);
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.pd-gallery__main:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-lg);
+}
+
+.pd-gallery__icon {
+  font-size: 7rem;
+  line-height: 1;
+  filter: drop-shadow(0 8px 16px rgba(0,0,0,0.15));
+  user-select: none;
+  pointer-events: none;
+}
+
+.pd-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: #fff9;
+  backdrop-filter: blur(6px);
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--pink-900);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Miniaturas */
+.pd-gallery__thumbs {
+  display: flex;
+  gap: 12px;
+}
+
+.pd-thumb {
+  width: 72px;
+  height: 72px;
+  border-radius: var(--radius-md);
+  border: 2px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  cursor: pointer;
+  background: var(--gray-100);
+  transition: var(--transition-fast);
+  box-shadow: var(--shadow-sm);
+}
+
+.pd-thumb:hover {
+  border-color: var(--pink-300);
+  background: var(--pink-50);
+}
+
+.pd-thumb--active {
+  border-color: var(--pink-700);
+  background: var(--pink-50);
+}
+
+
+/* ============================================================
+   INFORMAÇÕES DO PRODUTO
+============================================================ */
+.pd-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.pd-info__top {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.pd-category {
+  background: var(--pink-100);
+  color: var(--pink-900);
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* Estrelas */
+.pd-rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pd-stars {
+  display: flex;
+  gap: 1px;
+}
+
+.star {
+  font-size: 1rem;
+  color: var(--gray-200);
+}
+
+.star--full {
+  color: #f9a825;
+}
+
+.star--half {
+  background: linear-gradient(90deg, #f9a825 50%, var(--gray-200) 50%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.pd-rating__count {
+  font-size: 0.82rem;
+  color: var(--gray-400);
+}
+
+/* Nome */
+.pd-name {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 600;
+  color: var(--gray-800);
+  line-height: 1.25;
+}
+
+/* Preço */
+.pd-price-block {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.pd-price {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 700;
+  color: var(--pink-700);
+  line-height: 1;
+}
+
+.pd-price-parcel {
+  font-size: 0.85rem;
+  color: var(--gray-400);
+}
+
+/* Descrição */
+.pd-desc {
+  font-size: 0.95rem;
+  color: var(--gray-600);
+  line-height: 1.7;
+  border-left: 3px solid var(--pink-300);
+  padding-left: 14px;
+}
+
+/* Disponibilidade + entrega */
+.pd-badges-row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.pd-avail,
+.pd-ship {
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+}
+
+.pd-avail {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.pd-ship {
+  background: #e3f2fd;
+  color: #1565c0;
+}
+
+/* Quantidade + botões */
+.pd-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.pd-qty {
+  display: flex;
+  align-items: center;
+  border: 2px solid var(--gray-200);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  background: var(--white);
+}
+
+.pd-qty__btn {
+  background: transparent;
+  border: none;
+  padding: 10px 18px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--pink-700);
+  transition: var(--transition-fast);
+  line-height: 1;
+}
+
+.pd-qty__btn:hover {
+  background: var(--pink-100);
+}
+
+.pd-qty__val {
+  padding: 0 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--gray-800);
+  min-width: 32px;
+  text-align: center;
+}
+
+.pd-btn-cart {
+  flex: 1;
+  min-width: 180px;
+  padding: 14px 24px;
+  font-size: 0.95rem;
+}
+
+.pd-btn-wpp {
+  width: 100%;
+  padding: 14px 24px;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+/* Garantias */
+.pd-guarantees {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding-top: 8px;
+  border-top: 1px solid var(--gray-200);
+}
+
+.pd-guarantee {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  color: var(--gray-600);
+}
+
+.pd-guarantee__icon {
+  font-size: 1rem;
+}
+
+
+/* ============================================================
+   ABAS (DETALHES / DESCRIÇÃO / CUIDADOS)
+============================================================ */
+.pd-tabs-section {
+  background: var(--gray-100);
+  padding: 56px 0;
+}
+
+.pd-tabs {
+  display: flex;
+  gap: 4px;
+  border-bottom: 2px solid var(--gray-200);
+  margin-bottom: 36px;
+  overflow-x: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.pd-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.pd-tab {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  padding: 12px 20px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--gray-400);
+  cursor: pointer;
+  transition: var(--transition-fast);
+  white-space: nowrap;
+}
+
+.pd-tab:hover {
+  color: var(--pink-700);
+}
+
+.pd-tab--active {
+  color: var(--pink-700);
+  border-bottom-color: var(--pink-700);
+}
+
+.pd-tab-pane {
+  display: none;
+  animation: fadeIn 0.25s ease;
+}
+
+.pd-tab-pane--active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Grade de detalhes */
+.pd-details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.pd-detail-item {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  border: 1px solid var(--gray-200);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.pd-detail-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--gray-400);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.pd-detail-value {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--gray-800);
+}
+
+/* Descrição completa */
+.pd-desc-full {
+  max-width: 680px;
+  font-size: 0.95rem;
+  color: var(--gray-600);
+  line-height: 1.8;
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 28px 32px;
+  border: 1px solid var(--gray-200);
+}
+
+/* Cuidados */
+.pd-care-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 680px;
+}
+
+.pd-care-item {
+  display: flex;
+  gap: 16px;
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 20px 24px;
+  border: 1px solid var(--gray-200);
+  align-items: flex-start;
+}
+
+.pd-care-icon {
+  font-size: 1.6rem;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.pd-care-item strong {
+  display: block;
+  font-size: 0.92rem;
+  color: var(--gray-800);
+  margin-bottom: 4px;
+}
+
+.pd-care-item p {
+  font-size: 0.85rem;
+  color: var(--gray-600);
+  line-height: 1.6;
+  margin: 0;
+}
+
+
+/* ============================================================
+   AVALIAÇÕES
+============================================================ */
+.pd-reviews-section {
+  padding: 64px 0;
+}
+
+.pd-reviews-header {
+  display: flex;
+  gap: 48px;
+  align-items: flex-start;
+  margin-bottom: 48px;
+  flex-wrap: wrap;
+}
+
+.pd-reviews-score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  min-width: 130px;
+}
+
+.pd-score-big {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 4rem;
+  font-weight: 600;
+  color: var(--gray-800);
+  line-height: 1;
+}
+
+.pd-stars--lg .star {
+  font-size: 1.3rem;
+}
+
+.pd-reviews-score p {
+  font-size: 0.82rem;
+  color: var(--gray-400);
+}
+
+.pd-score-bars {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 200px;
+}
+
+.pd-score-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.8rem;
+  color: var(--gray-600);
+}
+
+.pd-score-bar > span:first-child {
+  width: 32px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.pd-score-bar > span:last-child {
+  width: 36px;
+  flex-shrink: 0;
+}
+
+.pd-bar {
+  flex: 1;
+  height: 8px;
+  background: var(--gray-200);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.pd-bar__fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--pink-500), var(--pink-700));
+  border-radius: var(--radius-full);
+  transition: width 0.6s ease;
+}
+
+/* Cards de avaliação */
+.pd-reviews-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.pd-review-card {
+  background: var(--pink-50);
+  border: 1px solid var(--pink-100);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.pd-review-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pd-review-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--pink-300), var(--pink-500));
+  color: var(--white);
+  font-weight: 700;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.pd-review-meta {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.pd-review-meta strong {
+  font-size: 0.9rem;
+  color: var(--gray-800);
+}
+
+.pd-review-date {
+  font-size: 0.75rem;
+  color: var(--gray-400);
+}
+
+.pd-review-stars {
+  color: #f9a825;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  flex-shrink: 0;
+}
+
+.pd-review-text {
+  font-size: 0.88rem;
+  color: var(--gray-600);
+  line-height: 1.7;
+  font-style: italic;
+}
+
+
+/* ============================================================
+   PRODUTOS RELACIONADOS
+============================================================ */
+.pd-related-section {
+  background: var(--pink-50);
+  padding: 64px 0;
+}
+
+/* ============================================================
+   CARD LINK WRAP (para clicar na imagem do card)
+============================================================ */
+.product-card__link-wrap {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.product-card__link-wrap .product-card__img {
+  cursor: pointer;
+}
+
+
+/* ============================================================
+   SELOS DE CONFIANÇA
+============================================================ */
+.pd-trust-section {
+  padding: 56px 0;
+  background: var(--white);
+  border-top: 1px solid var(--gray-200);
+}
+
+.pd-trust-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 32px;
+}
+
+.pd-trust-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  padding: 24px 16px;
+  border-radius: var(--radius-md);
+  transition: var(--transition);
+}
+
+.pd-trust-item:hover {
+  background: var(--pink-50);
+}
+
+.pd-trust-icon {
+  font-size: 2.2rem;
+  line-height: 1;
+}
+
+.pd-trust-item strong {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--gray-800);
+}
+
+.pd-trust-item p {
+  font-size: 0.8rem;
+  color: var(--gray-400);
+  line-height: 1.5;
+  margin: 0;
+}
+
+
+/* ============================================================
+   DETALHES DE DESIGN FLORAL — PRODUTO
+============================================================ */
+
+/* ── Barra de progresso floral no topo da página ── */
+.pd-section::before {
+  content: '';
+  display: block;
+  height: 4px;
+  background: linear-gradient(90deg,
+    var(--pink-300),
+    var(--pink-700),
+    var(--pink-500),
+    var(--pink-300)
+  );
+  margin-bottom: 0;
+}
+
+/* ── Galeria — moldura com gradiente floral no hover ── */
+.pd-gallery__main {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.pd-gallery__main::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: calc(var(--radius-lg) + 2px);
+  background: linear-gradient(135deg, var(--pink-300), var(--pink-700), var(--pink-300));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
+}
+
+.pd-gallery__main:hover::before { opacity: 1; }
+
+/* Reflexo de luz diagonal na imagem */
+.pd-gallery__main::after {
+  content: '';
+  position: absolute;
+  top: -40%;
+  left: -60%;
+  width: 50%;
+  height: 180%;
+  background: rgba(255,255,255,0.15);
+  transform: skewX(-18deg);
+  transition: left 0.55s ease;
+  pointer-events: none;
+}
+
+.pd-gallery__main:hover::after {
+  left: 140%;
+}
+
+/* ── Nome do produto — ornamento floral ── */
+.pd-name {
+  position: relative;
+  padding-bottom: 16px;
+}
+
+.pd-name::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 56px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--pink-300), var(--pink-700));
+  border-radius: var(--radius-full);
+}
+
+/* ── Bloco de preço com destaque suave ── */
+.pd-price-block {
+  background: linear-gradient(135deg, var(--pink-50), rgba(255,255,255,0));
+  border-left: 3px solid var(--pink-300);
+  padding: 12px 16px;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+/* ── Botão carrinho — brilho ── */
+.pd-btn-cart {
+  position: relative;
+  overflow: hidden;
+}
+
+.pd-btn-cart::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 40%;
+  height: 200%;
+  background: rgba(255,255,255,0.18);
+  transform: skewX(-20deg);
+  transition: left 0.45s ease;
+}
+
+.pd-btn-cart:hover::after { left: 130%; }
+
+/* ── Garantias com ícone com brilho ── */
+.pd-guarantee {
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  background: var(--pink-50);
+  border: 1px solid var(--pink-100);
+  transition: var(--transition-fast);
+}
+
+.pd-guarantee:hover {
+  border-color: var(--pink-300);
+  background: var(--pink-100);
+}
+
+/* ── Abas com gradiente floral ── */
+.pd-tab--active {
+  background: linear-gradient(135deg, var(--pink-700), var(--pink-900));
+}
+
+/* ── Review card com aspas decorativas ── */
+.pd-review-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.pd-review-card::before {
+  content: '\201C';
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 5rem;
+  color: var(--pink-300);
+  position: absolute;
+  top: 0;
+  right: 16px;
+  line-height: 1;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* ── Trust items com linha superior colorida ── */
+.pd-trust-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.pd-trust-item::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--pink-300), var(--pink-500));
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.pd-trust-item:hover::before { opacity: 1; }
+
+/* ── Barras de avaliação com transição suave ── */
+.pd-bar__fill {
+  transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Seção de avaliações com padrão sutil ── */
+.pd-reviews-section {
+  background-image: radial-gradient(circle at 1px 1px, var(--pink-100) 1px, transparent 0);
+  background-size: 28px 28px;
+  background-color: var(--white);
+}
+
+/* ── Seção trust com borda floral ── */
+.pd-trust-section::before {
+  content: '';
+  display: block;
+  height: 4px;
+  background: linear-gradient(90deg,
+    var(--pink-50),
+    var(--pink-300),
+    var(--pink-700),
+    var(--pink-300),
+    var(--pink-50)
+  );
+}
+
+/* ── Breadcrumb com ícone floral ── */
+.breadcrumb-bar {
+  background: linear-gradient(90deg, var(--pink-50), var(--white), var(--pink-50));
+}
+
+/* ── Thumbnail ativa com gradiente ── */
+.pd-thumb--active {
+  border-color: var(--pink-700);
+  background: linear-gradient(135deg, var(--pink-50), var(--pink-100));
+}
+
+/* ============================================================
+   RESPONSIVIDADE — PRODUTO
+============================================================ */
+
+/* ---- Tablet — até 900px ---- */
+@media (max-width: 900px) {
+  .pd-inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .pd-gallery {
+    position: static;
+  }
+
+  .pd-gallery__main {
+    max-width: 440px;
+    margin: 0 auto;
+  }
+
+  .pd-gallery__thumbs {
+    justify-content: center;
+  }
+}
+
+/* ---- Tablet — produtos relacionados 2 colunas compactas ---- */
+@media (max-width: 768px) {
+  .pd-related-section .products-grid { gap: 10px; }
+}
+
+/* ---- Mobile grande — até 640px ---- */
+@media (max-width: 640px) {
+  .pd-section {
+    padding: 36px 0 52px;
+  }
+
+  /* Breadcrumb */
+  .breadcrumb-bar { padding: 12px 0; }
+  .breadcrumb     { font-size: 0.8rem; gap: 4px; }
+  .breadcrumb__current { max-width: 140px; }
+
+  /* Galeria */
+  .pd-gallery__main {
+    max-width: 100%;
+    border-radius: var(--radius-md);
+  }
+
+  .pd-gallery__icon { font-size: 5.5rem; }
+
+  .pd-thumb { width: 60px; height: 60px; font-size: 1.5rem; }
+
+  /* Info */
+  .pd-name  { font-size: 1.45rem; }
+  .pd-price { font-size: 1.8rem; }
+
+  .pd-info__top { gap: 10px; }
+  .pd-rating__count { font-size: 0.78rem; }
+
+  /* Ações */
+  .pd-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .pd-qty { justify-content: center; }
+
+  .pd-qty__btn {
+    padding: 12px 20px;
+    min-height: 48px; /* touch target */
+  }
+
+  .pd-btn-cart,
+  .pd-btn-wpp {
+    min-width: unset;
+    padding: 14px 20px;
+    min-height: 48px;
+  }
+
+  /* Garantias */
+  .pd-guarantees {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* Abas */
+  .pd-tabs-section { padding: 40px 0; }
+  .pd-tab { padding: 10px 14px; font-size: 0.82rem; min-height: 44px; }
+
+  /* Detalhes */
+  .pd-details-grid { grid-template-columns: 1fr 1fr; }
+
+  /* Avaliações */
+  .pd-reviews-section  { padding: 48px 0; }
+  .pd-reviews-header   { flex-direction: column; gap: 24px; align-items: flex-start; }
+  .pd-score-bars       { min-width: unset; width: 100%; }
+  .pd-reviews-list     { grid-template-columns: 1fr; }
+
+  /* Trust */
+  .pd-trust-section { padding: 40px 0; }
+  .pd-trust-grid    { grid-template-columns: 1fr 1fr; gap: 20px; }
+
+  /* Relacionados */
+  .pd-related-section { padding: 48px 0; }
+}
+
+/* ---- Mobile — até 480px ---- */
+@media (max-width: 480px) {
+  /* Breadcrumb simplificado */
+  .breadcrumb__current { max-width: 110px; }
+
+  /* Galeria */
+  .pd-gallery__icon { font-size: 4.5rem; }
+
+  .pd-gallery__thumbs { gap: 8px; }
+  .pd-thumb { width: 52px; height: 52px; font-size: 1.3rem; border-radius: var(--radius-sm); }
+
+  /* Info */
+  .pd-name  { font-size: 1.3rem; }
+  .pd-price { font-size: 1.6rem; }
+  .pd-price-parcel { font-size: 0.78rem; }
+  .pd-desc  { font-size: 0.88rem; }
+
+  /* Badges */
+  .pd-badges-row { gap: 8px; }
+  .pd-avail,
+  .pd-ship { font-size: 0.76rem; padding: 5px 10px; }
+
+  /* Inputs da página de contato que podem aparecer */
+  input, select, textarea { font-size: 16px; }
+
+  /* Abas de produto */
+  .pd-tabs { gap: 2px; }
+  .pd-tab  { padding: 10px 12px; font-size: 0.78rem; }
+
+  /* Grade de detalhes — 1 coluna */
+  .pd-details-grid { grid-template-columns: 1fr; gap: 10px; }
+  .pd-detail-item  { padding: 14px 16px; }
+
+  /* Descrição */
+  .pd-desc-full { padding: 20px 18px; }
+
+  /* Cuidados */
+  .pd-care-item { padding: 16px 18px; flex-direction: column; gap: 10px; }
+  .pd-care-icon { font-size: 1.3rem; }
+
+  /* Score de avaliações */
+  .pd-score-big  { font-size: 3rem; }
+  .pd-review-card { padding: 18px 16px; }
+  .pd-review-text { font-size: 0.84rem; }
+
+  /* Trust — 1 coluna */
+  .pd-trust-grid { grid-template-columns: 1fr; gap: 14px; }
+  .pd-trust-item { padding: 18px 12px; }
+}
+
+/* ---- Mobile pequeno — até 360px ---- */
+@media (max-width: 360px) {
+  .pd-section { padding: 20px 0 32px; }
+
+  .pd-gallery__icon { font-size: 4rem; }
+
+  .pd-name  { font-size: 1.2rem; }
+  .pd-price { font-size: 1.45rem; }
+
+  .pd-details-grid { grid-template-columns: 1fr; }
+
+  .pd-trust-grid { grid-template-columns: 1fr; }
+}

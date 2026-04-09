@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="floristanaweb - Detalhes do produto">
+  <title>Produto | floristanaweb</title>
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="produto.css">
+</head>
+<body>
+
+  <!-- ================================================
+       HEADER
+  ================================================= -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo">
+        <span class="logo__icon">🌸</span>
+        <span class="logo__text">florista<strong>naweb</strong></span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Menu principal">
+        <ul class="nav__list">
+          <li><a href="index.html"           class="nav__link">Home</a></li>
+          <li><a href="index.html#produtos"  class="nav__link">Produtos</a></li>
+          <li><a href="index.html#sobre"     class="nav__link">Sobre Nós</a></li>
+          <li><a href="index.html#contato"   class="nav__link">Contato</a></li>
+        </ul>
+      </nav>
+
+      <button class="cart-btn" id="cartBtn" aria-label="Ver carrinho de compras">
+        <span class="cart-btn__icon">🛒</span>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+        <span class="hamburger__bar"></span>
+        <span class="hamburger__bar"></span>
+        <span class="hamburger__bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="nav-overlay" id="navOverlay"></div>
+
+
+  <!-- ================================================
+       BREADCRUMB
+  ================================================= -->
+  <div class="breadcrumb-bar">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Localização">
+        <a href="index.html">Home</a>
+        <span class="breadcrumb__sep">›</span>
+        <a href="index.html#produtos">Produtos</a>
+        <span class="breadcrumb__sep">›</span>
+        <span id="breadcrumbCategoria" class="breadcrumb__current">—</span>
+        <span class="breadcrumb__sep">›</span>
+        <span id="breadcrumbNome" class="breadcrumb__current">—</span>
+      </nav>
+    </div>
+  </div>
+
+
+  <!-- ================================================
+       PRODUTO PRINCIPAL
+  ================================================= -->
+  <section class="pd-section">
+    <div class="container pd-inner">
+
+      <!-- Galeria / Visual do produto -->
+      <div class="pd-gallery">
+        <div class="pd-gallery__main" id="pdImgMain">
+          <span class="pd-gallery__icon" id="pdIcon" aria-hidden="true">🌸</span>
+          <span class="pd-badge" id="pdBadge" hidden>⭐ Destaque</span>
+        </div>
+
+        <!-- Miniaturas decorativas -->
+        <div class="pd-gallery__thumbs" id="pdThumbs">
+          <div class="pd-thumb pd-thumb--active" data-index="0">
+            <span id="pdThumb0Icon">🌸</span>
+          </div>
+          <div class="pd-thumb" data-index="1">
+            <span>🌿</span>
+          </div>
+          <div class="pd-thumb" data-index="2">
+            <span>🎀</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Informações do produto -->
+      <div class="pd-info">
+
+        <!-- Categoria + avaliação -->
+        <div class="pd-info__top">
+          <span class="pd-category" id="pdCategoria">—</span>
+          <div class="pd-rating" aria-label="Avaliação 4.9 de 5 estrelas">
+            <div class="pd-stars">
+              <span class="star star--full">★</span>
+              <span class="star star--full">★</span>
+              <span class="star star--full">★</span>
+              <span class="star star--full">★</span>
+              <span class="star star--half">★</span>
+            </div>
+            <span class="pd-rating__count">(4.9) · <span id="pdReviewCount">48</span> avaliações</span>
+          </div>
+        </div>
+
+        <h1 class="pd-name" id="pdNome">Carregando...</h1>
+
+        <!-- Preço -->
+        <div class="pd-price-block">
+          <span class="pd-price" id="pdPreco">R$ 0,00</span>
+          <span class="pd-price-parcel" id="pdParcel"></span>
+        </div>
+
+        <!-- Descrição curta -->
+        <p class="pd-desc" id="pdDescricao">—</p>
+
+        <!-- Disponibilidade + entrega -->
+        <div class="pd-badges-row">
+          <span class="pd-avail">✅ Em estoque</span>
+          <span class="pd-ship">🚚 Entrega no mesmo dia</span>
+        </div>
+
+        <!-- Quantidade + botões de ação -->
+        <div class="pd-actions">
+          <div class="pd-qty">
+            <button class="pd-qty__btn" id="pdQtyMinus" aria-label="Diminuir quantidade">−</button>
+            <span class="pd-qty__val" id="pdQtyVal" aria-live="polite">1</span>
+            <button class="pd-qty__btn" id="pdQtyPlus"  aria-label="Aumentar quantidade">+</button>
+          </div>
+
+          <button class="btn btn--primary pd-btn-cart" id="pdAddCart">
+            🛒 Adicionar ao Carrinho
+          </button>
+        </div>
+
+        <button class="btn btn--whatsapp pd-btn-wpp" id="pdBuyNow">
+          💬 Comprar pelo WhatsApp
+        </button>
+
+        <!-- Garantias -->
+        <div class="pd-guarantees">
+          <div class="pd-guarantee">
+            <span class="pd-guarantee__icon">🔒</span>
+            <span>Pagamento seguro</span>
+          </div>
+          <div class="pd-guarantee">
+            <span class="pd-guarantee__icon">🌿</span>
+            <span>Flores frescas garantidas</span>
+          </div>
+          <div class="pd-guarantee">
+            <span class="pd-guarantee__icon">🎀</span>
+            <span>Embalagem especial inclusa</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================================================
+       ABAS: DETALHES / DESCRIÇÃO / CUIDADOS
+  ================================================= -->
+  <section class="pd-tabs-section">
+    <div class="container">
+      <div class="pd-tabs" role="tablist">
+        <button class="pd-tab pd-tab--active" data-tab="detalhes" role="tab" aria-selected="true">Condições do Produto</button>
+        <button class="pd-tab" data-tab="descricao" role="tab" aria-selected="false">Descrição Completa</button>
+        <button class="pd-tab" data-tab="cuidados" role="tab" aria-selected="false">Cuidados com as Flores</button>
+      </div>
+
+      <div class="pd-tab-content">
+
+        <!-- Condições -->
+        <div class="pd-tab-pane pd-tab-pane--active" id="tab-detalhes">
+          <div class="pd-details-grid">
+            <div class="pd-detail-item">
+              <span class="pd-detail-label">Estado</span>
+              <span class="pd-detail-value">Novo · Flores Frescas</span>
+            </div>
+            <div class="pd-detail-item">
+              <span class="pd-detail-label">Embalagem</span>
+              <span class="pd-detail-value">Papel kraft artesanal + laço de fita</span>
+            </div>
+            <div class="pd-detail-item">
+              <span class="pd-detail-label">Entrega</span>
+              <span class="pd-detail-value">Mesmo dia (pedidos até 14h)</span>
+            </div>
+            <div class="pd-detail-item">
+              <span class="pd-detail-label">Personalização</span>
+              <span class="pd-detail-value">Cartão com mensagem incluso</span>
+            </div>
+            <div class="pd-detail-item">
+              <span class="pd-detail-label">Garantia</span>
+              <span class="pd-detail-value">Flores frescas por até 5 dias</span>
+            </div>
+            <div class="pd-detail-item">
+              <span class="pd-detail-label">Disponibilidade</span>
+              <span class="pd-detail-value">Belo Jardim e região</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Descrição -->
+        <div class="pd-tab-pane" id="tab-descricao">
+          <div class="pd-desc-full">
+            <p id="pdDescFull">—</p>
+            <br>
+            <p>
+              Cada arranjo da <strong>floristanaweb</strong> é cuidadosamente montado por nossas floristas com mais de 15 anos
+              de experiência. Utilizamos somente flores frescas selecionadas diretamente dos melhores produtores locais,
+              garantindo máximo frescor e durabilidade.
+            </p>
+            <br>
+            <p>
+              A embalagem é feita com papel kraft artesanal, fita de cetim e um cartão personalizado com a sua mensagem.
+              O presente perfeito para qualquer ocasião especial!
+            </p>
+          </div>
+        </div>
+
+        <!-- Cuidados -->
+        <div class="pd-tab-pane" id="tab-cuidados">
+          <div class="pd-care-list">
+            <div class="pd-care-item">
+              <span class="pd-care-icon">💧</span>
+              <div>
+                <strong>Água fresca diariamente</strong>
+                <p>Troque a água do vaso todos os dias e corte os talos em diagonal para absorção máxima.</p>
+              </div>
+            </div>
+            <div class="pd-care-item">
+              <span class="pd-care-icon">🌡️</span>
+              <div>
+                <strong>Temperatura ambiente</strong>
+                <p>Mantenha as flores longe de fontes de calor, ar-condicionado direto e luz solar direta intensa.</p>
+              </div>
+            </div>
+            <div class="pd-care-item">
+              <span class="pd-care-icon">✂️</span>
+              <div>
+                <strong>Corte dos talos</strong>
+                <p>A cada 2 dias, corte cerca de 1 cm dos talos em diagonal com uma tesoura limpa e afiada.</p>
+              </div>
+            </div>
+            <div class="pd-care-item">
+              <span class="pd-care-icon">🧴</span>
+              <div>
+                <strong>Conservante floral</strong>
+                <p>Use o sachê de conservante que acompanha o arranjo na primeira troca de água para prolongar a vida das flores.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================================================
+       AVALIAÇÕES DOS CLIENTES
+  ================================================= -->
+  <section class="pd-reviews-section">
+    <div class="container">
+      <div class="pd-reviews-header">
+        <div class="pd-reviews-score">
+          <div class="pd-score-big" id="pdScoreBig">4.9</div>
+          <div class="pd-stars pd-stars--lg">
+            <span class="star star--full">★</span>
+            <span class="star star--full">★</span>
+            <span class="star star--full">★</span>
+            <span class="star star--full">★</span>
+            <span class="star star--half">★</span>
+          </div>
+          <p id="pdReviewTotal">48 avaliações</p>
+        </div>
+        <div class="pd-score-bars">
+          <div class="pd-score-bar">
+            <span>5 ★</span>
+            <div class="pd-bar"><div class="pd-bar__fill" style="width: 82%"></div></div>
+            <span>82%</span>
+          </div>
+          <div class="pd-score-bar">
+            <span>4 ★</span>
+            <div class="pd-bar"><div class="pd-bar__fill" style="width: 12%"></div></div>
+            <span>12%</span>
+          </div>
+          <div class="pd-score-bar">
+            <span>3 ★</span>
+            <div class="pd-bar"><div class="pd-bar__fill" style="width: 4%"></div></div>
+            <span>4%</span>
+          </div>
+          <div class="pd-score-bar">
+            <span>2 ★</span>
+            <div class="pd-bar"><div class="pd-bar__fill" style="width: 1%"></div></div>
+            <span>1%</span>
+          </div>
+          <div class="pd-score-bar">
+            <span>1 ★</span>
+            <div class="pd-bar"><div class="pd-bar__fill" style="width: 1%"></div></div>
+            <span>1%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lista de avaliações -->
+      <div class="pd-reviews-list" id="pdReviewsList">
+        <!-- preenchido pelo JS -->
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================================================
+       PRODUTOS RELACIONADOS
+  ================================================= -->
+  <section class="pd-related-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Veja Também</span>
+        <h2 class="section-title">Você Também Pode Gostar</h2>
+      </div>
+      <div class="products-grid" id="pdRelatedGrid"></div>
+    </div>
+  </section>
+
+
+  <!-- ================================================
+       SELOS DE CONFIANÇA
+  ================================================= -->
+  <section class="pd-trust-section">
+    <div class="container pd-trust-grid">
+      <div class="pd-trust-item">
+        <span class="pd-trust-icon">🌿</span>
+        <strong>Flores Frescas</strong>
+        <p>Direto dos produtores locais com frescor garantido</p>
+      </div>
+      <div class="pd-trust-item">
+        <span class="pd-trust-icon">🚚</span>
+        <strong>Entrega no Mesmo Dia</strong>
+        <p>Para pedidos realizados até as 14h, entregamos hoje</p>
+      </div>
+      <div class="pd-trust-item">
+        <span class="pd-trust-icon">💝</span>
+        <strong>100% Personalizado</strong>
+        <p>Cartão com mensagem e embalagem artesanal inclusa</p>
+      </div>
+      <div class="pd-trust-item">
+        <span class="pd-trust-icon">⭐</span>
+        <strong>Qualidade Premium</strong>
+        <p>Mais de 15 anos encantando clientes com flores especiais</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================================================
+       FOOTER
+  ================================================= -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="index.html" class="logo logo--white">
+          <span class="logo__icon">🌸</span>
+          <span class="logo__text">florista<strong>naweb</strong></span>
+        </a>
+        <p>Transformando momentos em memórias eternas, uma flor de cada vez.</p>
+        <div class="footer__social">
+          <a href="#" aria-label="Instagram">📷</a>
+          <a href="#" aria-label="Facebook">👍</a>
+          <a href="https://wa.me/5531987654321" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">💬</a>
+        </div>
+      </div>
+
+      <div class="footer__col">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#produtos">Produtos</a></li>
+          <li><a href="index.html#sobre">Sobre Nós</a></li>
+          <li><a href="index.html#contato">Contato</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4>Produtos</h4>
+        <ul>
+          <li><a href="index.html#produtos">Buquês</a></li>
+          <li><a href="index.html#produtos">Flores Avulsas</a></li>
+          <li><a href="index.html#produtos">Cestas Especiais</a></li>
+          <li><a href="index.html#produtos">Presentes</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4>Contato</h4>
+        <address>
+          <p>📍 Rua das Flores, 142 — Centro</p>
+          <p>📞 (31) 3456-7890</p>
+          <p>💬 (31) 98765-4321</p>
+          <p>🕐 Seg–Sex: 8h às 18h</p>
+        </address>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="container">
+        <p>© 2024 floristanaweb. Todos os direitos reservados. Feito com 💖 e muitas flores.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- MODAL DO CARRINHO -->
+  <div class="cart-modal" id="cartModal" role="dialog" aria-modal="true" aria-label="Carrinho de compras" hidden>
+    <div class="cart-modal__overlay" id="cartOverlay"></div>
+    <div class="cart-modal__panel">
+      <div class="cart-modal__header">
+        <h3>🛒 Seu Carrinho</h3>
+        <button class="cart-modal__close" id="cartClose" aria-label="Fechar carrinho">✕</button>
+      </div>
+      <div class="cart-modal__body" id="cartBody">
+        <div class="cart-empty">
+          <span aria-hidden="true">🌸</span>
+          <p>Seu carrinho está vazio.</p>
+          <a href="index.html#produtos" class="btn btn--outline btn--sm">Ver Produtos</a>
+        </div>
+      </div>
+      <div class="cart-modal__footer" id="cartFooter" hidden>
+        <div class="cart-summary">
+          <div class="cart-summary__row">
+            <span>Subtotal</span>
+            <strong id="cartTotal">R$ 0,00</strong>
+          </div>
+          <p class="cart-summary__shipping">🚚 Frete calculado no checkout</p>
+        </div>
+        <button class="btn btn--whatsapp btn--full" id="checkoutBtn">
+          💬 Finalizar Pedido via WhatsApp
+        </button>
+        <button class="btn btn--outline btn--full" id="clearCartBtn">
+          🗑️ Limpar Carrinho
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- Botão flutuante WhatsApp (visível apenas no mobile) -->
+  <a href="https://wa.me/5531987654321?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20fazer%20um%20pedido."
+     target="_blank"
+     rel="noopener noreferrer"
+     class="fab-whatsapp"
+     aria-label="Chamar no WhatsApp">
+    💬
+  </a>
+
+  <script src="produto.js"></script>
+</body>
+</html>

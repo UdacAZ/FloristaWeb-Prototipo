@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="floristanaweb - Floricultura especializada em buquês, arranjos e presentes florais para todos os momentos especiais.">
+  <title>floristanaweb | Floricultura</title>
+
+  <!-- Google Fonts: Playfair Display (títulos elegantes) + Open Sans (corpo do texto) -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ================================================
+       HEADER — Navegação fixa com logo e menu mobile
+  ================================================= -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+
+      <!-- Logo da loja -->
+      <a href="#home" class="logo">
+        <span class="logo__icon">🌸</span>
+        <span class="logo__text">florista<strong>naweb</strong></span>
+      </a>
+
+      <!-- Menu de navegação (desktop) -->
+      <nav class="nav" id="nav" aria-label="Menu principal">
+        <ul class="nav__list">
+          <li><a href="#home"    class="nav__link active">Home</a></li>
+          <li><a href="#produtos" class="nav__link">Produtos</a></li>
+          <li><a href="#sobre"   class="nav__link">Sobre Nós</a></li>
+          <li><a href="#contato" class="nav__link">Contato</a></li>
+        </ul>
+      </nav>
+
+      <!-- Botão do carrinho -->
+      <button class="cart-btn" id="cartBtn" aria-label="Ver carrinho de compras">
+        <span class="cart-btn__icon">🛒</span>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+
+      <!-- Botão hambúrguer (mobile) -->
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+        <span class="hamburger__bar"></span>
+        <span class="hamburger__bar"></span>
+        <span class="hamburger__bar"></span>
+      </button>
+
+    </div>
+  </header>
+
+  <!-- Overlay do menu mobile -->
+  <div class="nav-overlay" id="navOverlay"></div>
+
+
+  <!-- ================================================
+       HERO — Banner principal com CTA
+  ================================================= -->
+  <section class="hero" id="home">
+    <!-- Elementos decorativos de fundo (CSS puro) -->
+    <div class="hero__blob hero__blob--1"></div>
+    <div class="hero__blob hero__blob--2"></div>
+    <div class="hero__blob hero__blob--3"></div>
+
+    <!-- Pétalas flutuantes animadas -->
+    <div class="hero__petals" aria-hidden="true">
+      <span class="petal petal--1"></span>
+      <span class="petal petal--2"></span>
+      <span class="petal petal--3"></span>
+      <span class="petal petal--4"></span>
+      <span class="petal petal--5"></span>
+      <span class="petal petal--6"></span>
+      <span class="petal petal--7"></span>
+      <span class="petal petal--8"></span>
+    </div>
+
+    <div class="container hero__inner">
+      <!-- Conteúdo principal do banner -->
+      <div class="hero__content">
+        <span class="badge">Floricultura Premium ✦ Desde 2009</span>
+        <h1 class="hero__title">
+          Transforme momentos em<br>
+          <em>memórias eternas</em>
+        </h1>
+        <p class="hero__subtitle">
+          Flores frescas e arranjos exclusivos para cada ocasião especial.
+          Do amor ao carinho, temos o presente perfeito para você.
+        </p>
+        <div class="hero__actions">
+          <a href="#produtos" class="btn btn--primary">Ver Buquês</a>
+          <a href="#sobre"    class="btn btn--outline">Nossa História</a>
+        </div>
+        <!-- Indicadores sociais -->
+        <div class="hero__social-proof">
+          <div class="proof-item">
+            <strong>+2.500</strong>
+            <span>Clientes felizes</span>
+          </div>
+          <div class="proof-divider"></div>
+          <div class="proof-item">
+            <strong>15 anos</strong>
+            <span>De experiência</span>
+          </div>
+          <div class="proof-divider"></div>
+          <div class="proof-item">
+            <strong>⭐ 4.9</strong>
+            <span>Avaliação média</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ilustração decorativa (CSS Art) -->
+      <div class="hero__visual" aria-hidden="true">
+        <div class="flower-container">
+          <div class="flower">
+            <div class="flower__petal flower__petal--1"></div>
+            <div class="flower__petal flower__petal--2"></div>
+            <div class="flower__petal flower__petal--3"></div>
+            <div class="flower__petal flower__petal--4"></div>
+            <div class="flower__petal flower__petal--5"></div>
+            <div class="flower__petal flower__petal--6"></div>
+            <div class="flower__center"></div>
+          </div>
+          <div class="flower flower--sm flower--sm1">
+            <div class="flower__petal flower__petal--1"></div>
+            <div class="flower__petal flower__petal--2"></div>
+            <div class="flower__petal flower__petal--3"></div>
+            <div class="flower__petal flower__petal--4"></div>
+            <div class="flower__center"></div>
+          </div>
+          <div class="flower flower--sm flower--sm2">
+            <div class="flower__petal flower__petal--1"></div>
+            <div class="flower__petal flower__petal--2"></div>
+            <div class="flower__petal flower__petal--3"></div>
+            <div class="flower__petal flower__petal--4"></div>
+            <div class="flower__center"></div>
+          </div>
+          <div class="stem stem--1"></div>
+          <div class="stem stem--2"></div>
+          <div class="leaf leaf--1"></div>
+          <div class="leaf leaf--2"></div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- ================================================
+       DIFERENCIAIS — Por que escolher a floristanaweb
+  ================================================= -->
+  <section class="features" id="diferenciais">
+    <div class="container features__grid">
+
+      <div class="feature-card">
+        <div class="feature-card__icon-wrap">🌿</div>
+        <h3>Flores Frescas</h3>
+        <p>Selecionamos as melhores flores diretamente dos produtores locais, garantindo frescor e durabilidade.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-card__icon-wrap">🚚</div>
+        <h3>Entrega no Mesmo Dia</h3>
+        <p>Entregamos para toda a cidade com embalagem especial e cuidado artesanal em cada pedido.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-card__icon-wrap">💝</div>
+        <h3>100% Personalizado</h3>
+        <p>Criamos arranjos únicos sob medida para tornar o seu momento ainda mais especial e memorável.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-card__icon-wrap">⭐</div>
+        <h3>Qualidade Premium</h3>
+        <p>Mais de 15 anos de experiência garantindo a satisfação total de cada cliente em cada ocasião.</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- Ornamento floral entre seções -->
+  <div class="floral-divider" aria-hidden="true">
+    <span class="floral-divider__line"></span>
+    <span class="floral-divider__bloom">🌸</span>
+    <span class="floral-divider__line"></span>
+  </div>
+
+  <!-- ================================================
+       DESTAQUES — Produtos mais vendidos
+  ================================================= -->
+  <section class="highlights">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Mais Vendidos</span>
+        <h2 class="section-title">Produtos em Destaque</h2>
+        <p class="section-subtitle">
+          Os favoritos das nossas clientes, feitos com amor e dedicação em cada pétala.
+        </p>
+      </div>
+      <!-- Grid preenchido dinamicamente pelo script.js -->
+      <div class="products-grid" id="destaquesGrid"></div>
+
+      <div class="highlights__cta">
+        <a href="#produtos" class="btn btn--outline">Ver Todos os Produtos</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================================================
+       PRODUTOS — Catálogo completo com abas de filtro
+  ================================================= -->
+  <section class="catalog" id="produtos">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Catálogo</span>
+        <h2 class="section-title">Nossos Produtos</h2>
+        <p class="section-subtitle">Encontre o presente perfeito para cada ocasião especial.</p>
+      </div>
+
+      <!-- Abas de categorias -->
+      <div class="tabs" id="tabs" role="tablist">
+        <button class="tab tab--active" data-category="todos"     role="tab" aria-selected="true">Todos</button>
+        <button class="tab"             data-category="buques"    role="tab" aria-selected="false">Buquês</button>
+        <button class="tab"             data-category="flores"    role="tab" aria-selected="false">Flores Avulsas</button>
+        <button class="tab"             data-category="cestas"    role="tab" aria-selected="false">Cestas Especiais</button>
+        <button class="tab"             data-category="presentes" role="tab" aria-selected="false">Presentes</button>
+      </div>
+
+      <!-- Grid de produtos preenchido pelo script.js -->
+      <div class="products-grid" id="productsGrid"></div>
+    </div>
+  </section>
+
+
+  <!-- ================================================
+       SOBRE NÓS — História, missão, visão e valores
+  ================================================= -->
+  <section class="about" id="sobre">
+    <div class="container about__inner">
+
+      <!-- Imagem / visual decorativo -->
+      <div class="about__visual" aria-hidden="true">
+        <div class="about__img-frame">
+          <div class="about__img-placeholder">
+            <span class="about__img-icon">🌸</span>
+            <p>floristanaweb</p>
+            <span>Desde 2009</span>
+          </div>
+          <!-- Decorações -->
+          <div class="about__badge-years">
+            <strong>15+</strong>
+            <span>anos de paixão por flores</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Conteúdo textual -->
+      <div class="about__content">
+        <span class="section-tag">Nossa História</span>
+        <h2 class="section-title">Uma história de amor<br>pelas flores</h2>
+
+        <p>
+          A <strong>floristanaweb</strong> nasceu em 2009, do sonho de Ana Claudia Mendes — uma jovem apaixonada
+          por jardins e pelo poder que as flores têm de transformar momentos. O que começou como um pequeno
+          quiosque no Mercado Municipal de Belo Jardim, hoje é uma das floriculturas mais queridas da cidade.
+        </p>
+        <p>
+          Ao longo de mais de 15 anos, tornamos especial cada aniversário, cada casamento, cada declaração
+          de amor e cada gesto de carinho. Acreditamos que flores não são apenas decoração:
+          <em>elas são sentimentos que você presenteia</em>.
+        </p>
+        <p>
+          Trabalhamos com produtores regionais para garantir flores sempre frescas, e nossa equipe de floristas
+          apaixonadas cria arranjos únicos, feitos com cuidado e afeto em cada detalhe.
+        </p>
+
+        <!-- Missão, Visão e Valores -->
+        <div class="about__mvv">
+          <div class="mvv-card">
+            <div class="mvv-card__icon">🌱</div>
+            <h4>Missão</h4>
+            <p>Tornar cada momento especial através da beleza e delicadeza das flores, com qualidade e carinho.</p>
+          </div>
+          <div class="mvv-card">
+            <div class="mvv-card__icon">🌟</div>
+            <h4>Visão</h4>
+            <p>Ser a floricultura mais amada e referência em criatividade e qualidade em toda a região.</p>
+          </div>
+          <div class="mvv-card">
+            <div class="mvv-card__icon">💖</div>
+            <h4>Valores</h4>
+            <p>Amor, dedicação, qualidade, sustentabilidade e compromisso com o sorriso de cada cliente.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- Ornamento floral entre seções -->
+  <div class="floral-divider" aria-hidden="true">
+    <span class="floral-divider__line"></span>
+    <span class="floral-divider__bloom">🌷</span>
+    <span class="floral-divider__line"></span>
+  </div>
+
+  <!-- ================================================
+       DEPOIMENTOS — Avaliações de clientes
+  ================================================= -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Depoimentos</span>
+        <h2 class="section-title">O que dizem nossas clientes</h2>
+        <p class="section-subtitle">Histórias reais de momentos inesquecíveis.</p>
+      </div>
+
+      <div class="testimonials__grid">
+
+        <article class="testimonial-card">
+          <div class="testimonial-card__stars" aria-label="5 estrelas">⭐⭐⭐⭐⭐</div>
+          <blockquote>
+            "Encomendei um buquê de rosas para o aniversário da minha mãe e ficou LINDO!
+            A embalagem era impecável e as flores eram super frescas. Com certeza vou pedir sempre aqui!"
+          </blockquote>
+          <div class="testimonial-card__author">
+            <div class="author-avatar" aria-hidden="true">M</div>
+            <div class="author-info">
+              <strong>Marina Souza</strong>
+              <span>Cliente há 3 anos</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="testimonial-card">
+          <div class="testimonial-card__stars" aria-label="5 estrelas">⭐⭐⭐⭐⭐</div>
+          <blockquote>
+            "A floristanaweb decorou o meu casamento e transformou tudo em um sonho. A Ana Claudia
+            entendeu exatamente o que eu queria e superou todas as expectativas. Amei cada detalhe!"
+          </blockquote>
+          <div class="testimonial-card__author">
+            <div class="author-avatar" aria-hidden="true">C</div>
+            <div class="author-info">
+              <strong>Carla Ferreira</strong>
+              <span>Noiva feliz ✨</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="testimonial-card">
+          <div class="testimonial-card__stars" aria-label="5 estrelas">⭐⭐⭐⭐⭐</div>
+          <blockquote>
+            "Atendimento maravilhoso! Pedi via WhatsApp e em menos de 2 horas o presente chegou.
+            As flores eram as mais bonitas que já vi! Super indico para todo mundo!"
+          </blockquote>
+          <div class="testimonial-card__author">
+            <div class="author-avatar" aria-hidden="true">J</div>
+            <div class="author-info">
+              <strong>Juliana Alves</strong>
+              <span>Cliente fiel</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================================================
+       CONTATO — Formulário + informações + WhatsApp
+  ================================================= -->
+  <section class="contact" id="contato">
+    <div class="container contact__inner">
+
+      <!-- Informações de contato -->
+      <div class="contact__info">
+        <span class="section-tag">Fale Conosco</span>
+        <h2 class="section-title">Entre em contato</h2>
+        <p class="contact__intro">
+          Adoramos conversar! Seja para tirar dúvidas, fazer um pedido especial ou
+          planejar um evento — estamos aqui para você.
+        </p>
+
+        <ul class="contact__details">
+          <li class="contact-item">
+            <span class="contact-item__icon" aria-hidden="true">📍</span>
+            <div>
+              <strong>Endereço</strong>
+              <p>Rua das Flores, 142 — Centro<br>Belo Jardim, MG — CEP 35500-000</p>
+            </div>
+          </li>
+          <li class="contact-item">
+            <span class="contact-item__icon" aria-hidden="true">📞</span>
+            <div>
+              <strong>Telefone</strong>
+              <p>(31) 3456-7890</p>
+            </div>
+          </li>
+          <li class="contact-item">
+            <span class="contact-item__icon" aria-hidden="true">🕐</span>
+            <div>
+              <strong>Horário de Funcionamento</strong>
+              <p>Segunda a Sexta: 8h às 18h<br>Sábados: 8h às 14h</p>
+            </div>
+          </li>
+          <li class="contact-item">
+            <span class="contact-item__icon" aria-hidden="true">📧</span>
+            <div>
+              <strong>E-mail</strong>
+              <p>contato@floristanaweb.com.br</p>
+            </div>
+          </li>
+        </ul>
+
+        <!-- Botão de WhatsApp com link direto -->
+        <a href="https://wa.me/5531987654321?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20fazer%20um%20pedido."
+           target="_blank"
+           rel="noopener noreferrer"
+           class="btn btn--whatsapp">
+          💬 Chamar no WhatsApp
+        </a>
+      </div>
+
+      <!-- Formulário de contato -->
+      <div class="contact__form-wrapper">
+        <form class="contact-form" id="contactForm" novalidate>
+          <h3>Envie uma mensagem</h3>
+
+          <div class="form-group">
+            <label for="name">Seu nome *</label>
+            <input type="text" id="name" name="name"
+                   placeholder="Maria da Silva" autocomplete="name" required>
+            <span class="form-error" id="nameError" role="alert"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="email">E-mail *</label>
+            <input type="email" id="email" name="email"
+                   placeholder="maria@email.com" autocomplete="email" required>
+            <span class="form-error" id="emailError" role="alert"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Telefone <span class="optional">(opcional)</span></label>
+            <input type="tel" id="phone" name="phone"
+                   placeholder="(31) 99999-0000" autocomplete="tel">
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Assunto</label>
+            <select id="subject" name="subject">
+              <option value="">Selecione um assunto</option>
+              <option value="pedido">Fazer um pedido</option>
+              <option value="evento">Decoração de evento</option>
+              <option value="casamento">Casamento</option>
+              <option value="duvida">Tirar uma dúvida</option>
+              <option value="outro">Outro</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Mensagem *</label>
+            <textarea id="message" name="message" rows="5"
+                      placeholder="Olá! Gostaria de saber mais sobre..." required></textarea>
+            <span class="form-error" id="messageError" role="alert"></span>
+          </div>
+
+          <button type="submit" class="btn btn--primary btn--full" id="submitBtn">
+            Enviar Mensagem
+          </button>
+
+          <!-- Feedback de sucesso (oculto por padrão) -->
+          <div class="form-success" id="formSuccess" role="status" hidden>
+            ✅ Mensagem enviada com sucesso! Entraremos em contato em breve.
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================================================
+       FOOTER
+  ================================================= -->
+  <footer class="footer">
+    <div class="container footer__inner">
+
+      <!-- Coluna 1: Marca -->
+      <div class="footer__brand">
+        <a href="#home" class="logo logo--white">
+          <span class="logo__icon">🌸</span>
+          <span class="logo__text">florista<strong>naweb</strong></span>
+        </a>
+        <p>Transformando momentos em memórias eternas, uma flor de cada vez.</p>
+        <div class="footer__social">
+          <a href="#" aria-label="Instagram da floristanaweb" title="Instagram">📷</a>
+          <a href="#" aria-label="Facebook da floristanaweb" title="Facebook">👍</a>
+          <a href="https://wa.me/5531987654321" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" title="WhatsApp">💬</a>
+        </div>
+      </div>
+
+      <!-- Coluna 2: Navegação -->
+      <div class="footer__col">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#produtos">Produtos</a></li>
+          <li><a href="#sobre">Sobre Nós</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </div>
+
+      <!-- Coluna 3: Produtos -->
+      <div class="footer__col">
+        <h4>Produtos</h4>
+        <ul>
+          <li><a href="#produtos">Buquês</a></li>
+          <li><a href="#produtos">Flores Avulsas</a></li>
+          <li><a href="#produtos">Cestas Especiais</a></li>
+          <li><a href="#produtos">Presentes</a></li>
+        </ul>
+      </div>
+
+      <!-- Coluna 4: Contato -->
+      <div class="footer__col">
+        <h4>Contato</h4>
+        <address>
+          <p>📍 Rua das Flores, 142 — Centro</p>
+          <p>📞 (31) 3456-7890</p>
+          <p>💬 (31) 98765-4321</p>
+          <p>🕐 Seg–Sex: 8h às 18h</p>
+        </address>
+      </div>
+
+    </div>
+
+    <div class="footer__bottom">
+      <div class="container">
+        <p>© 2024 floristanaweb. Todos os direitos reservados. Feito com 💖 e muitas flores.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ================================================
+       MODAL DO CARRINHO
+  ================================================= -->
+  <div class="cart-modal" id="cartModal" role="dialog" aria-modal="true" aria-label="Carrinho de compras" hidden>
+    <div class="cart-modal__overlay" id="cartOverlay"></div>
+    <div class="cart-modal__panel">
+
+      <div class="cart-modal__header">
+        <h3>🛒 Seu Carrinho</h3>
+        <button class="cart-modal__close" id="cartClose" aria-label="Fechar carrinho">✕</button>
+      </div>
+
+      <div class="cart-modal__body" id="cartBody">
+        <div class="cart-empty">
+          <span aria-hidden="true">🌸</span>
+          <p>Seu carrinho está vazio.</p>
+          <a href="#produtos" class="btn btn--outline btn--sm">Ver Produtos</a>
+        </div>
+      </div>
+
+      <div class="cart-modal__footer" id="cartFooter" hidden>
+        <div class="cart-summary">
+          <div class="cart-summary__row">
+            <span>Subtotal</span>
+            <strong id="cartTotal">R$ 0,00</strong>
+          </div>
+          <p class="cart-summary__shipping">🚚 Frete calculado no checkout</p>
+        </div>
+        <button class="btn btn--whatsapp btn--full" id="checkoutBtn">
+          💬 Finalizar Pedido via WhatsApp
+        </button>
+        <button class="btn btn--outline btn--full" id="clearCartBtn">
+          🗑️ Limpar Carrinho
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- Toast de notificação (feedback de ações) -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- Botão flutuante WhatsApp (visível apenas no mobile) -->
+  <a href="https://wa.me/5531987654321?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20fazer%20um%20pedido."
+     target="_blank"
+     rel="noopener noreferrer"
+     class="fab-whatsapp"
+     aria-label="Chamar no WhatsApp">
+    💬
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>

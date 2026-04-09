@@ -107,15 +107,15 @@
 
 .pd-badge {
   position: absolute;
-  top: 16px;
-  left: 16px;
-  background: #fff9;
-  backdrop-filter: blur(6px);
-  padding: 6px 14px;
+  top: 12px;
+  left: 12px;
+  background: var(--pink-700);
+  color: var(--white);
+  padding: 4px 10px;
   border-radius: var(--radius-full);
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: var(--pink-900);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
   box-shadow: var(--shadow-sm);
 }
 
@@ -912,167 +912,191 @@
 ============================================================ */
 
 /* ---- Tablet — até 900px ---- */
+/* ---- Tablet — até 900px: empilha galeria + info ---- */
 @media (max-width: 900px) {
+  .pd-section { padding: 40px 0 56px; }
+
   .pd-inner {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 36px;
   }
 
-  .pd-gallery {
-    position: static;
-  }
+  .pd-gallery { position: static; }
 
   .pd-gallery__main {
-    max-width: 440px;
+    max-width: 480px;
     margin: 0 auto;
   }
 
-  .pd-gallery__thumbs {
-    justify-content: center;
-  }
+  .pd-gallery__thumbs { justify-content: center; }
 }
 
-/* ---- Tablet — produtos relacionados 2 colunas compactas ---- */
+/* ---- Tablet — produtos relacionados ---- */
 @media (max-width: 768px) {
-  .pd-related-section .products-grid { gap: 10px; }
+  .pd-related-section .products-grid { gap: 12px; }
 }
 
-/* ---- Mobile grande — até 640px ---- */
+/* ---- Mobile — até 640px ---- */
 @media (max-width: 640px) {
-  .pd-section {
-    padding: 36px 0 52px;
-  }
+  /* Seção principal */
+  .pd-section { padding: 28px 0 48px; }
+  .pd-inner   { gap: 28px; }
 
   /* Breadcrumb */
-  .breadcrumb-bar { padding: 12px 0; }
-  .breadcrumb     { font-size: 0.8rem; gap: 4px; }
-  .breadcrumb__current { max-width: 140px; }
+  .breadcrumb-bar      { padding: 10px 0; }
+  .breadcrumb          { font-size: 0.78rem; }
+  .breadcrumb__current { max-width: 130px; }
 
-  /* Galeria */
+  /* Galeria — ocupa largura toda */
+  .pd-gallery { gap: 14px; }
+
   .pd-gallery__main {
     max-width: 100%;
+    aspect-ratio: 4 / 3;
     border-radius: var(--radius-md);
   }
 
-  .pd-gallery__icon { font-size: 5.5rem; }
+  .pd-gallery__icon { font-size: 6rem; }
 
-  .pd-thumb { width: 60px; height: 60px; font-size: 1.5rem; }
+  /* Badge destaque — pequeno e discreto no canto */
+  .pd-badge {
+    font-size: 0.62rem;
+    padding: 3px 8px;
+    top: 8px;
+    left: 8px;
+  }
 
-  /* Info */
-  .pd-name  { font-size: 1.45rem; }
-  .pd-price { font-size: 1.8rem; }
+  .pd-gallery__thumbs { gap: 10px; justify-content: center; }
+  .pd-thumb { width: 64px; height: 64px; font-size: 1.6rem; }
 
-  .pd-info__top { gap: 10px; }
-  .pd-rating__count { font-size: 0.78rem; }
+  /* Info — mais espaço entre elementos */
+  .pd-info { gap: 16px; }
 
-  /* Ações */
+  .pd-info__top    { gap: 10px; flex-wrap: wrap; }
+  .pd-name         { font-size: 1.5rem; padding-bottom: 14px; }
+  .pd-price        { font-size: 2rem; }
+  .pd-price-parcel { font-size: 0.82rem; }
+  .pd-desc         { font-size: 0.92rem; line-height: 1.7; }
+
+  .pd-rating__count { font-size: 0.8rem; }
+
+  /* Badges de estoque/entrega */
+  .pd-badges-row { gap: 10px; flex-wrap: wrap; }
+  .pd-avail,
+  .pd-ship { font-size: 0.8rem; padding: 6px 12px; }
+
+  /* Quantidade + botões */
   .pd-actions {
     flex-direction: column;
     align-items: stretch;
     gap: 12px;
   }
 
-  .pd-qty { justify-content: center; }
-
-  .pd-qty__btn {
-    padding: 12px 20px;
-    min-height: 48px; /* touch target */
-  }
+  .pd-qty             { justify-content: center; }
+  .pd-qty__btn        { padding: 14px 22px; min-height: 48px; font-size: 1.2rem; }
+  .pd-qty__val        { font-size: 1.1rem; }
 
   .pd-btn-cart,
   .pd-btn-wpp {
     min-width: unset;
-    padding: 14px 20px;
-    min-height: 48px;
+    width: 100%;
+    padding: 16px 20px;
+    min-height: 52px;
+    font-size: 1rem;
   }
 
-  /* Garantias */
+  /* Garantias — grade 2 colunas */
   .pd-guarantees {
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 10px;
   }
 
-  /* Abas */
-  .pd-tabs-section { padding: 40px 0; }
-  .pd-tab { padding: 10px 14px; font-size: 0.82rem; min-height: 44px; }
+  .pd-guarantee { justify-content: center; text-align: center; flex-direction: column; gap: 4px; }
 
-  /* Detalhes */
-  .pd-details-grid { grid-template-columns: 1fr 1fr; }
+  /* Abas */
+  .pd-tabs-section { padding: 44px 0; }
+  .pd-tabs         { gap: 4px; }
+  .pd-tab          { padding: 12px 16px; font-size: 0.84rem; min-height: 46px; }
+
+  /* Detalhes — 2 colunas */
+  .pd-details-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .pd-detail-item  { padding: 16px; }
+
+  /* Descrição */
+  .pd-desc-full { padding: 24px 20px; font-size: 0.93rem; line-height: 1.8; }
+
+  /* Cuidados */
+  .pd-care-list { gap: 14px; }
+  .pd-care-item { padding: 18px 20px; gap: 14px; }
 
   /* Avaliações */
-  .pd-reviews-section  { padding: 48px 0; }
-  .pd-reviews-header   { flex-direction: column; gap: 24px; align-items: flex-start; }
-  .pd-score-bars       { min-width: unset; width: 100%; }
-  .pd-reviews-list     { grid-template-columns: 1fr; }
+  .pd-reviews-section { padding: 52px 0; }
+  .pd-reviews-header  { flex-direction: column; gap: 24px; align-items: flex-start; }
+  .pd-score-bars      { min-width: unset; width: 100%; }
+  .pd-reviews-list    { grid-template-columns: 1fr; gap: 16px; }
+  .pd-review-card     { padding: 22px 20px; }
 
   /* Trust */
-  .pd-trust-section { padding: 40px 0; }
-  .pd-trust-grid    { grid-template-columns: 1fr 1fr; gap: 20px; }
+  .pd-trust-section { padding: 44px 0; }
+  .pd-trust-grid    { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .pd-trust-item    { padding: 20px 14px; }
 
   /* Relacionados */
-  .pd-related-section { padding: 48px 0; }
+  .pd-related-section { padding: 52px 0; }
 }
 
 /* ---- Mobile — até 480px ---- */
 @media (max-width: 480px) {
-  /* Breadcrumb simplificado */
-  .breadcrumb__current { max-width: 110px; }
+  .pd-section { padding: 24px 0 44px; }
 
   /* Galeria */
-  .pd-gallery__icon { font-size: 4.5rem; }
-
-  .pd-gallery__thumbs { gap: 8px; }
-  .pd-thumb { width: 52px; height: 52px; font-size: 1.3rem; border-radius: var(--radius-sm); }
+  .pd-gallery__main  { aspect-ratio: 3 / 2; }
+  .pd-gallery__icon  { font-size: 5rem; }
+  .pd-thumb          { width: 56px; height: 56px; font-size: 1.4rem; }
 
   /* Info */
-  .pd-name  { font-size: 1.3rem; }
-  .pd-price { font-size: 1.6rem; }
-  .pd-price-parcel { font-size: 0.78rem; }
-  .pd-desc  { font-size: 0.88rem; }
+  .pd-info  { gap: 14px; }
+  .pd-name  { font-size: 1.35rem; }
+  .pd-price { font-size: 1.8rem; }
+  .pd-desc  { font-size: 0.9rem; }
 
-  /* Badges */
-  .pd-badges-row { gap: 8px; }
-  .pd-avail,
-  .pd-ship { font-size: 0.76rem; padding: 5px 10px; }
+  /* Garantias — 1 coluna */
+  .pd-guarantees { grid-template-columns: 1fr; gap: 8px; }
+  .pd-guarantee  { flex-direction: row; text-align: left; }
 
-  /* Inputs da página de contato que podem aparecer */
-  input, select, textarea { font-size: 16px; }
+  /* Abas */
+  .pd-tab { padding: 11px 13px; font-size: 0.8rem; }
 
-  /* Abas de produto */
-  .pd-tabs { gap: 2px; }
-  .pd-tab  { padding: 10px 12px; font-size: 0.78rem; }
-
-  /* Grade de detalhes — 1 coluna */
+  /* Detalhes — 1 coluna */
   .pd-details-grid { grid-template-columns: 1fr; gap: 10px; }
   .pd-detail-item  { padding: 14px 16px; }
 
-  /* Descrição */
-  .pd-desc-full { padding: 20px 18px; }
-
   /* Cuidados */
-  .pd-care-item { padding: 16px 18px; flex-direction: column; gap: 10px; }
-  .pd-care-icon { font-size: 1.3rem; }
+  .pd-care-item { flex-direction: column; padding: 16px 18px; gap: 10px; }
+  .pd-care-icon { font-size: 1.4rem; }
 
-  /* Score de avaliações */
-  .pd-score-big  { font-size: 3rem; }
+  /* Score avaliações */
+  .pd-score-big   { font-size: 3.2rem; }
   .pd-review-card { padding: 18px 16px; }
-  .pd-review-text { font-size: 0.84rem; }
+  .pd-review-text { font-size: 0.85rem; }
 
-  /* Trust — 1 coluna */
-  .pd-trust-grid { grid-template-columns: 1fr; gap: 14px; }
-  .pd-trust-item { padding: 18px 12px; }
+  /* Trust */
+  .pd-trust-grid { grid-template-columns: 1fr; gap: 12px; }
 }
 
 /* ---- Mobile pequeno — até 360px ---- */
 @media (max-width: 360px) {
-  .pd-section { padding: 20px 0 32px; }
+  .pd-section { padding: 20px 0 36px; }
+  .pd-inner   { gap: 22px; }
 
-  .pd-gallery__icon { font-size: 4rem; }
+  .pd-gallery__icon { font-size: 4.5rem; }
+  .pd-thumb         { width: 50px; height: 50px; font-size: 1.2rem; }
 
   .pd-name  { font-size: 1.2rem; }
-  .pd-price { font-size: 1.45rem; }
+  .pd-price { font-size: 1.6rem; }
+  .pd-desc  { font-size: 0.86rem; }
 
-  .pd-details-grid { grid-template-columns: 1fr; }
-
-  .pd-trust-grid { grid-template-columns: 1fr; }
+  .pd-btn-cart,
+  .pd-btn-wpp { font-size: 0.9rem; padding: 14px 16px; }
 }
